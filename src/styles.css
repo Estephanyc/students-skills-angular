@@ -1,0 +1,24 @@
+body {
+    font-family: 'Ubuntu', sans-serif !important;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.popover-header {
+    text-align: center !important;
+    color: #fff !important;
+    background-color: #4d4a6a !important;
+}
+
+.bs-popover-auto .arrow::after,
+.bs-popover-bottom .arrow::after {
+    border-bottom-color: #4d4a6a !important
+}

@@ -1,0 +1,15 @@
+<div class="container-fluid">
+    <div class="col-12 col-md-10 pl-0 pr-0 mx-auto border mb-2">
+        <app-nav></app-nav>
+        <div class="m-5">
+            <h2>Students Data</h2>
+        </div>
+        <div class="m-5">
+            <div *ngFor="let student of  (list$ | async)">
+                <app-student [student]="student.payload.val()" [key]="student.payload.key">
+                </app-student>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,30 @@
+<div class="row student">
+    <div class="col-3 col-md-2">
+        <img class="img-fluid shadow-sm border border-white rounded" src="{{student.Foto}}" />
+    </div>
+    <div class="col-md-3 col-7">
+        <h4> {{student.Nombre}}</h4>
+    </div>
+    <div class="col-12 col-md-7">
+        <h4>Skills</h4>
+        <div class="row">
+            <app-skill *ngFor="let skill of (skills$ | async)" [skill]="skill.payload.val()" [key]="skill.payload.key" (valueRemove)='removeSkill($event)'></app-skill>
+        </div>
+        <div class="row">
+            <button type="button" class="btn btn-light" placement="bottom" [ngbPopover]="popContent" [popoverTitle]="popTitle" #popover3="ngbPopover" [autoClose]="'outside'">Añadir +</button>
+        </div>
+    </div>
+</div>
+
+<ng-template #popContent>
+    <form [formGroup]="skillForm" (ngSubmit)="addSkill(key)">
+        <input type="text" class="form-control" formControlName="content">
+        <div class="row p-1 mx-auto">
+            <button type="submit" [disabled]="!skillForm.valid" class="btn btn-lg btn-primary btn-sm rounded col-5 m-1">Add</button>
+            <button type="button" class="btn btn-lg btn-secondary btn-sm rounded col-5 m-1">Close</button>
+        </div>
+    </form>
+</ng-template>
+<ng-template #popTitle>
+    <p>Add new Skill</p>
+</ng-template>
