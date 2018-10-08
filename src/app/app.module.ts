@@ -13,7 +13,6 @@ import { StudentComponent } from './student/student.component';
 import { SkillComponent } from './skill/skill.component';
 import { TooltipComponent } from './tooltip/tooltip.component';
 import { NavComponent } from './nav/nav.component';
-import { SComponent } from './s/s.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -24,7 +23,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     SkillComponent,
     TooltipComponent,
     NavComponent,
-    SComponent
   ],
   imports: [
     BrowserModule,

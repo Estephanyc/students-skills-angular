@@ -15,7 +15,11 @@ export class AppComponent {
   constructor(private database: AngularFireDatabase) {
     this.list$ = this.database.list('/students').snapshotChanges()      
   
-     let student={
+  }
+  getData() {
+    return this.list$
+  }
+   /*   let student={
       Foto: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSo3vhO4W-Hh7H9LXtOFcGc9ITi8_QPb52SsID5KX5vOt4S-ppK2A",
       Nombre: 'Andrea Guerrero',
       Skills:{
@@ -28,6 +32,5 @@ export class AppComponent {
     }
     for(let i=0; i< 10; i++){
 /*        this.database.list(`students`).push(student);
- */    }  
-  } 
+     }  */ 
 }
